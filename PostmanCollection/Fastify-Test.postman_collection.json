@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "01e44263-f621-4f25-97c2-1784df42cf76",
+		"name": "Fastify-Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13203120"
+	},
+	"item": [
+		{
+			"name": "Hello world",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List of posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/post/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"post",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user with pseudo \"mary123\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/user/mary123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"mary123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
