@@ -7,9 +7,15 @@ Put all different routes in a file, and those files into folders depending the o
 example :
 
 routes/
+
 -- user/
+
 -- -- list of users.js
+
 -- -- specific user.js
+
 -- post/
+
 -- -- list of posts.js
+
 -- -- specific post.js
