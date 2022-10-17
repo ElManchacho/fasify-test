@@ -1,0 +1,16 @@
+[
+    {
+        "id":"ba24d60b-a420-49cf-89b3-00195605dd1b",
+        "idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate":"10/10/2022",
+        "title":"My first post",
+        "text":"Hey everyone, this is my first post for the fastify test project !"
+    },
+    {
+        "id":"c2689ef8-f7d3-427a-96bd-19c4d1b723a4",
+        "idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate":"17/10/2022",
+        "title":"Lorem Ipsum",
+        "text":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+]
