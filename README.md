@@ -18,7 +18,7 @@ Have a complete CRUD logic delivered by the API (CREATE, READ, UPDATE, DELETE)
 
 --> CREATE (POST request)
 
---> UPDATE
+--> UPDATE (PATCH request)
 
 --> DELETE
 
