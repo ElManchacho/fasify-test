@@ -8,7 +8,7 @@ Just a test project to train fastify API creation
 
 Have a complete CRUD logic delivered by the API (CREATE, READ, UPDATE, DELETE)
 
---> CREATE
+--> CREATE (POST resquest)
 
 --> UPDATE
 
