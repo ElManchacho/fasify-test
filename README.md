@@ -50,11 +50,11 @@ node server
 
 Find your http adress to call your requests on here : http://localhost:3000/
 
-(a basic hello world is bound to that exact adress)
+(a basic hello world is bound to that address)
 
 ## Swagger
 
-And the swagger to observe here
+And the swagger to observe here : http://localhost:3000/docs
 
 # Other ressources
 
