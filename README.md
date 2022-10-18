@@ -30,7 +30,7 @@ A basic test swagger (add @fastify/swagger + @fastify/swagger-ui to your fastify
 
 # Start things
 
-## Prerequisite
+## Prerequisite (in main folder)
 
 ```bash
 npm i
