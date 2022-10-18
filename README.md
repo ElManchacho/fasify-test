@@ -55,3 +55,11 @@ Find your http adress to call your requests on here : http://localhost:3000/
 ## Swagger
 
 And the swagger to observe here
+
+# Other ressources
+
+## Postman collection
+
+A json Postman collection is available in the folder 'PostmanCollection', named 'Fastify-Test.postman_collection.json'.
+
+Simply import it with Postman to observe the routes and test it.
