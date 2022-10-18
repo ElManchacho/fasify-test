@@ -28,7 +28,7 @@ class PostService {
 
         // Create a new Post object
 
-        const Post = require('../../schemas/postSchema')
+        const Post = require('../../ObjectClasses/postClass')
 
         var newPost = new Post(idCreator, body.title, body.text)
 

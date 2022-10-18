@@ -17,23 +17,35 @@ fastify.register(require('@fastify/swagger'), {
         url: 'https://swagger.io',
         description: 'Find more info here'
       },
-      host: 'localhost',
+      host: 'localhost:3000',
       schemes: ['http'],
       consumes: ['application/json'],
       produces: ['application/json'],
       tags: [
+        { name: 'helloworld', description: 'Hellow world testing endpoint' },
         { name: 'user', description: 'User related end-points' },
-        { name: 'code', description: 'Code related end-points' }
+        { name: 'post', description: 'Post related end-points' }
       ],
       definitions: {
         User: {
           type: 'object',
-          required: ['id', 'email'],
           properties: {
             id: { type: 'string', format: 'uuid' },
-            firstName: { type: 'string' },
-            lastName: { type: 'string' },
-            email: {type: 'string', format: 'email' }
+            name: { type: 'string' },
+            pseudo: { type: 'string' },
+            age: { type: 'int'},
+            birthDate: { type: 'Date', format: 'en-US'},
+            password: { type: 'string' }
+          }
+        },
+        Post: {
+          type: 'object',
+          properties: {
+            id: { type: 'string', format: 'uuid' },
+            idCreator: { type: 'string' },
+            creationDate: { type: 'Date', format: 'en-US'},
+            title: { type: 'string' },
+            text: { type: 'string' }
           }
         }
       },
