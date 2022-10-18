@@ -42,3 +42,16 @@ npm i
 ```bash
 node server
 ```
+
+
+# Access things
+
+## Endpoint
+
+Find your http adress to call your requests on here : http://localhost:3000/
+
+(a basic hello world is bound to that exact adress)
+
+## Swagger
+
+And the swagger to observe here
