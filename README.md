@@ -1,21 +1,27 @@
 # fasify-test
+
 Just a test project to train fastify API creation
 
-# To come
-Put all different routes in a file, and those files into folders depending the object type manipulated.
+# Ideas
 
-example :
+## To come
 
-routes/
+Have a complete CRUD logic delivered by the API (CREATE, READ, UPDATE, DELETE)
 
--- user/
+--> CREATE
 
--- -- list of users.js
+--> UPDATE
 
--- -- specific user.js
+--> DELETE
 
--- post/
+A route to create an object
 
--- -- list of posts.js
+A route that'd take headers values in account
 
--- -- specific post.js
+## Done
+
+Tidy route instanciation --> OK
+
+Have a complete CRUD logic delivered by the API (CREATE, READ, UPDATE, DELETE)
+
+--> READ : OK
