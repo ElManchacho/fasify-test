@@ -10,11 +10,11 @@ For now, nothing.
 
 ## Done
 
-Tidy route instanciation --> OK
+Tidy route instanciation
 
 Have a complete CRUD logic delivered by the API (CREATE, READ, UPDATE, DELETE)
 
---> READ : OK
+--> READ
 
 --> CREATE (POST request)
 
