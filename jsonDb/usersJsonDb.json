@@ -4,7 +4,7 @@
         "name":"Henry",
         "pseudo":"henry123",
         "age":25,
-        "birthdate":"08/01/1997",
+        "birthdate":"01/08/1997",
         "password":"123456"
     },
     {
@@ -12,7 +12,7 @@
         "name":"Mary",
         "pseudo":"mary123",
         "age":50,
-        "birthdate":"08/01/1972",
+        "birthdate":"01/08/1972",
         "password":"m@ry1972"
     }
 ]

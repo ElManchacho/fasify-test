@@ -23,9 +23,8 @@ module.exports = function (server, opts, done){
             }
         },
         handler: async (request, reply) => {
-            const { pseudo } = request.params;
-            var extractedUser = userService.getUser(pseudo)
-            return {user: extractedUser}
+            const { pseudo } = request.params
+            return {user: await userService.getUser(pseudo)}
         }
     })
 

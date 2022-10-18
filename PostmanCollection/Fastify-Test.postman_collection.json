@@ -64,6 +64,36 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Create post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "idCreator",
+						"value": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Post creation test\",\r\n    \"text\":\"This post is a test to check if it is properly created and added to database\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/post/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"post",
+						"new"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
