@@ -43,6 +43,63 @@ class PostService{
 
         return newPost
     }
+
+    deletePost(userId, idPost){
+
+        // Add new Post object to JSON database
+
+        const fs = require('fs');
+
+        var fileName = 'jsonDb\\postsJsonDb.json' // --> Path to reach the JSON database file from the server location
+
+        var file = this.postConnection
+
+        var content = file
+
+        var message = {}
+
+        var postToDelete
+
+        if (content.find(({ id }) => id === idPost)){
+            if (content.find(({ idCreator }) => idCreator === userId)){
+                postToDelete = content.find(({ id }) => id === idPost)
+                message = {
+                    statusCode:200
+                }
+            }
+
+            else {
+                if (postToDelete == undefined){
+                    message.statusCode = 403
+                    message.error = 'Forbidden'
+                    message.message = 'Access forbidden. You are not allowed to modify post with ID '+idPost+'.'
+                }
+            }
+        }
+        else{
+            if (postToDelete == undefined){
+                message.statusCode = 442
+                message.error = 'Unprocessable Entity'
+                message.message = 'Post with ID '+idPost+' does not exist.'
+            }
+        }
+
+        var idPostToDelete = content.indexOf(postToDelete)
+
+        content.splice(idPostToDelete,1)
+
+        if (message.statusCode==200){
+            content = JSON.stringify(content)
+
+            fs.writeFile(fileName, content, function writeJSON(err) {
+                if (err)  {
+                    return err
+                };
+            });
+        }
+
+        return {postToDelete, message}
+    }
     
 }
 

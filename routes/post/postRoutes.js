@@ -27,9 +27,19 @@ module.exports = function (server, opts, done) {
         method: 'POST',
         url: '/post/new',
         handler: async (request, reply) => {
-            const { body, headers } = request
-            const { idCreator } = headers
-            return { newPost: await postService.newPost(idCreator, JSON.parse(body)) }
+            const { body } = request
+            const { idcreator } = request.headers // --> Not case sensistive !
+            return { newPost: await postService.newPost(idcreator, JSON.parse(body)) }
+        }
+    })
+
+    server.route({
+        method:'DELETE',
+        url:'/post/:postId',
+        handler:async(request, reply)=>{
+            const { postId } = request.params
+            const { userid } = request.headers
+            return { deletedPost: await postService.deletePost(userid, postId) }
         }
     })
 
