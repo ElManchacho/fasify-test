@@ -63,3 +63,11 @@ And the swagger to observe here
 A json Postman collection is available in the folder 'PostmanCollection', named 'Fastify-Test.postman_collection.json'.
 
 Simply import it with Postman to observe the routes and test it.
+
+## External ressources (documentation)
+
+Fastify : https://www.fastify.io/
+
+Swagger schema generation : https://github.com/fastify/fastify-swagger
+
+Swagger UI generation : https://github.com/fastify/fastify-swagger-ui
