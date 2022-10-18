@@ -7,93 +7,186 @@
 	},
 	"item": [
 		{
-			"name": "Hello world",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "List of posts",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/post/list",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"post",
-						"list"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get user with pseudo \"mary123\"",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/user/mary123",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"user",
-						"mary123"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create post",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "idCreator",
-						"value": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\":\"Post creation test\",\r\n    \"text\":\"This post is a test to check if it is properly created and added to database\"\r\n}"
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Create post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idcreator",
+								"value": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+								"description": "not case sensitive in fastify request analysis",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Post creation test\",\r\n    \"text\":\"This post is a test to check if it is properly created and added to database\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/post/new",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"new"
+							]
+						}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/post/new",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"post",
-						"new"
-					]
+				{
+					"name": "Delete a post with it's id (select any postId while parcouring the List of posts in the request)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "userid",
+								"value": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+								"description": "not case sensitive in fastify request analysis",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/post/adab97b7-6ea2-45e1-b3de-92ce2a818ada",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"adab97b7-6ea2-45e1-b3de-92ce2a818ada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get post by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/post/c2689ef8-f7d3-427a-96bd-19c4d1b723a4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"c2689ef8-f7d3-427a-96bd-19c4d1b723a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "userid",
+								"value": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Title replaced\",\r\n    \"text\":\"Text replaced\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/post/c2689ef8-f7d3-427a-96bd-19c4d1b723a4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"c2689ef8-f7d3-427a-96bd-19c4d1b723a4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/post/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"post",
+								"list"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get user with pseudo \"mary123\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/mary123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"mary123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hello World",
+			"item": [
+				{
+					"name": "Hello world",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

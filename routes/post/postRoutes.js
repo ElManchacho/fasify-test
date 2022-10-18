@@ -21,6 +21,17 @@ module.exports = function (server, opts, done) {
         }
     })
 
+    // Specific post route
+
+    server.route({
+        method:'GET',
+        url:'/post/:postId',
+        handler:async(request, reply)=>{
+            const { postId } = request.params
+            return { post: await postService.getPost(postId) }
+        }
+    })
+
     // Post creation route
     
     server.route({
@@ -33,6 +44,8 @@ module.exports = function (server, opts, done) {
         }
     })
 
+    // Post deletion route
+
     server.route({
         method:'DELETE',
         url:'/post/:postId',
@@ -40,6 +53,19 @@ module.exports = function (server, opts, done) {
             const { postId } = request.params
             const { userid } = request.headers
             return { deletedPost: await postService.deletePost(userid, postId) }
+        }
+    })
+
+    // Post patch route
+
+    server.route({
+        method:'PATCH',
+        url:'/post/:postId',
+        handler:async(request, reply)=>{
+            const { postId } = request.params
+            const { userid } = request.headers
+            const { body } = request
+            return { updatedPost: await postService.updatePost(userid, JSON.parse(body), postId) }
         }
     })
 
