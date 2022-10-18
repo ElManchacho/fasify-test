@@ -10,8 +10,6 @@ Have a complete CRUD logic delivered by the API (CREATE, READ, UPDATE, DELETE)
 
 --> UPDATE
 
---> DELETE
-
 ## Done
 
 Tidy route instanciation --> OK
@@ -21,6 +19,8 @@ Have a complete CRUD logic delivered by the API (CREATE, READ, UPDATE, DELETE)
 --> READ : OK
 
 --> CREATE (POST request)
+
+--> DELETE
 
 A route to create an object
 
