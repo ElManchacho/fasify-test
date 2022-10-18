@@ -54,7 +54,7 @@ Find your http adress to call your requests on here : http://localhost:3000/
 
 ## Swagger
 
-And the swagger to observe here
+And the swagger to observe here : http://localhost:3000/docs
 
 # Other ressources
 
