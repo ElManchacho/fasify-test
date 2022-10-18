@@ -1,50 +1,26 @@
-// Services imports
-
-const PostService = require('./service/post/postService.js')
-const UserService = require('./service/user/userService.js')
-
-// Service Instanciation
-
-const postService = new PostService()
-
-const userService = new UserService()
-
 // Instantiating API
 
 // Require the framework and instantiate it
 const fastify = require('fastify')({ logger: true })
 
-// Hello world route
-fastify.get('/', async (request, reply) => {
-    return { hello: 'world' }
-})
+// Allow CORS rules
 
-// Posts list route
-fastify.route({
-    method: 'GET',
-    url: '/post/list',
-    handler: async (request, reply) => {
-        var extractedPostList = postService.getPosts()
-        return { postList: extractedPostList }
-    }
-})
+cors = require('@fastify/cors');
 
-// Specific post route
-fastify.route({
-    method: 'GET',
-    url: '/user/:pseudo',
-    schema: {
-        // request needs to have a query string with a `pseudo` parameter
-        querystring: {
-            pseudo: { type: 'string' }
-        }
-    },
-    handler: async (request, reply) => {
-        const { pseudo } = request.params;
-        var extractedUser = userService.getUser(pseudo)
-        return {user: extractedUser}
-    }
-})
+fastify.register(cors, {
+    origin: '*',
+  });
+
+// Importing and adding routes from external files to server
+
+const HelloWorldRoute = require('./routes/helloworld/helloWorldRoute')
+const PostRoutes = require('./routes/post/postRoutes')
+const UserRoutes = require('./routes/user/userRoutes')
+
+fastify.register(HelloWorldRoute)
+fastify.register(PostRoutes)
+fastify.register(UserRoutes)
+
 
 // Run the server!
 const start = async () => {
