@@ -1,4 +1,4 @@
-# fasify-test (https://github.com/ElManchacho/fasify-test.git)
+# fastify-test (https://github.com/ElManchacho/fasify-test.git)
 
 Just a test project to train fastify API creation
 
