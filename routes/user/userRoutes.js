@@ -11,17 +11,13 @@ module.exports = function (server, opts, done){
 
     const userService = new UserService()
         
-    // Define a route to get a specific user 
+    // Define a route to get a specific user with it's schema
 
+    const { getUserSchema } = require('../../schemas/userSchema')
     server.route({
         method: 'GET',
         url: '/user/:pseudo',
-        schema: {
-            // request needs to have a query string with a `pseudo` parameter
-            querystring: {
-                pseudo: { type: 'string' }
-            }
-        },
+        schema: getUserSchema,
         handler: async (request, reply) => {
             const { pseudo } = request.params
             return {user: await userService.getUser(pseudo)}
