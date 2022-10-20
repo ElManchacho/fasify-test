@@ -10,14 +10,19 @@ module.exports = function (server, opts, done) {
     // Service Instanciation
 
     const postService = new PostService()
+
+    // Import return schema
+
+    const { getPostsSchema } = require('../../schemas/userSchema')
     
     // Posts list route
 
     server.route({
         method: 'GET',
         url: '/post/list',
+        //schema:getPostsSchema,
         handler: async (request, reply) => {
-            return { postList: await postService.getPosts() }
+            return { posts: await postService.getPosts() }
         }
     })
 
