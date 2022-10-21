@@ -2,6 +2,8 @@
 
 Just a test project to train fastify API creation
 
+Is being used with following Angular training front : https://github.com/ElManchacho/test-angular.git
+
 # Ideas
 
 ## To come
