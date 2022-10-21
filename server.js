@@ -22,9 +22,9 @@ fastify.register(require('@fastify/swagger'), {
       consumes: ['application/json'],
       produces: ['application/json'],
       tags: [
-        { name: 'helloworld', description: 'Hellow world testing endpoint' },
-        { name: 'user', description: 'User related end-points' },
-        { name: 'post', description: 'Post related end-points' }
+        { name: 'HelloWorld', description: 'Hello world testing endpoint' },
+        { name: 'User', description: 'User related endpoints' },
+        { name: 'Post', description: 'Post related endpoints' }
       ],
       definitions: {
         User: {

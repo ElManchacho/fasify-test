@@ -1,6 +1,6 @@
 const getUserSchema = {
-    description: 'Get specifi user',
-    tags: ['user'],
+    description: 'Get specific user',
+    tags: ['User'],
     params: {
         pseudo: { type: 'string' }
     },

@@ -1,7 +1,7 @@
 const hellowWorldSchema = {
   schema: {
     description: 'Hello world',
-    tags: ['helloworld'],
+    tags: ['HelloWorld'],
     response: {
       200: {
         type: 'object',

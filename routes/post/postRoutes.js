@@ -10,38 +10,39 @@ module.exports = function (server, opts, done) {
     // Service Instanciation
 
     const postService = new PostService()
-
-    // Import return schema
-
-    const { getPostsSchema } = require('../../schemas/userSchema')
     
-    // Posts list route
+    // Posts list route with response schema
 
+    const { getPostsSchema } = require('../../schemas/postSchema')
     server.route({
         method: 'GET',
         url: '/post/list',
-        //schema:getPostsSchema,
+        schema:getPostsSchema,
         handler: async (request, reply) => {
             return { posts: await postService.getPosts() }
         }
     })
 
-    // Specific post route
+    // Specific post route with response schema
 
+    const { getPostSchema } = require('../../schemas/postSchema')
     server.route({
         method:'GET',
         url:'/post/:postId',
+        schema:getPostSchema,
         handler:async(request, reply)=>{
             const { postId } = request.params
             return { post: await postService.getPost(postId) }
         }
     })
 
-    // Post creation route
+    // Post creation route with response schema
     
+    const { newPostSchema } = require('../../schemas/postSchema')
     server.route({
         method: 'POST',
         url: '/post/new',
+        //schema:newPostSchema,
         handler: async (request, reply) => {
             const { body } = request
             const { idcreator } = request.headers // --> Not case sensistive !
@@ -49,11 +50,13 @@ module.exports = function (server, opts, done) {
         }
     })
 
-    // Post deletion route
+    // Post deletion route with response schema
 
+    const { deletePostSchema } = require('../../schemas/postSchema')
     server.route({
         method:'DELETE',
         url:'/post/:postId',
+        schema:deletePostSchema,
         handler:async(request, reply)=>{
             const { postId } = request.params
             const { userid } = request.headers
@@ -61,11 +64,13 @@ module.exports = function (server, opts, done) {
         }
     })
 
-    // Post patch route
+    // Post patch route with response schema
 
+    const { updatePostSchema } = require('../../schemas/postSchema')
     server.route({
         method:'PATCH',
         url:'/post/:postId',
+        schema:updatePostSchema,
         handler:async(request, reply)=>{
             const { postId } = request.params
             const { userid } = request.headers
