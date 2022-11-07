@@ -18,7 +18,7 @@ fastify.register(require('@fastify/swagger'), {
         description: 'Find more info here'
       },
       host: 'localhost:3000',
-      schemes: ['http'],
+      schemes: ['http','https'],
       consumes: ['application/json'],
       produces: ['application/json'],
       tags: [

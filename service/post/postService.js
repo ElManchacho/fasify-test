@@ -1,3 +1,5 @@
+const { type } = require('os')
+
 class PostService {
 
     postConnection
@@ -25,6 +27,10 @@ class PostService {
     }
 
     newPost(idCreator, body) {
+
+        if (typeof body == 'string'){ //  Had to accept both string and object types, because swagger passes an Object to the request, and the swagger passes a String, then the string must be converted into Json object
+            body = JSON.parse(body)
+        }
 
         // Create a new Post object
 
@@ -109,10 +115,14 @@ class PostService {
             });
         }
 
-        return { postToDelete, message }
+        return postToDelete
     }
 
     updatePost(userId, body, idPost) {
+
+        if (typeof body == 'string'){ //  Had to accept both string and object types, because swagger passes an Object to the request, and the swagger passes a String, then the string must be converted into Json object
+            body = JSON.parse(body)
+        }
 
         // Add new Post object to JSON database
 
@@ -135,7 +145,7 @@ class PostService {
                 content[idPostToModify].title = body.title
                 content[idPostToModify].text = body.text
                 message = {
-                    statusCode: 200
+                    statusCode: 200 // Keeping those informations for coding informative purposes (but the message isn't returned so it can be removed)
                 }
             }
 
@@ -143,7 +153,7 @@ class PostService {
                 if (postToModify == undefined) {
                     message.statusCode = 403
                     message.error = 'Forbidden'
-                    message.message = 'Access forbidden. You are not allowed to modify post with ID ' + idPost + '.'
+                    message.message = 'Access forbidden. You are not allowed to modify post with ID ' + idPost + '.' // Keeping those informations for coding informative purposes (but the message isn't returned so it can be removed)
                 }
             }
         }
@@ -151,7 +161,7 @@ class PostService {
             if (postToModify == undefined) {
                 message.statusCode = 442
                 message.error = 'Unprocessable Entity'
-                message.message = 'Post with ID ' + idPost + ' does not exist.'
+                message.message = 'Post with ID ' + idPost + ' does not exist.' // Keeping those informations for coding informative purposes (but the message isn't returned so it can be removed)
             }
         }
         
@@ -165,7 +175,7 @@ class PostService {
             });
         }
 
-        return { postToModify }
+        return postToModify
     }
 
 }
