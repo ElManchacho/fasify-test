@@ -22,7 +22,6 @@ fastify.register(require('@fastify/swagger'), {
       consumes: ['application/json'],
       produces: ['application/json'],
       tags: [
-        { name: 'HelloWorld', description: 'Hello world testing endpoint' },
         { name: 'User', description: 'User related endpoints' },
         { name: 'Post', description: 'Post related endpoints' }
       ],

@@ -20,7 +20,15 @@ module.exports = function (server, opts, done){
         schema: getUserSchema,
         handler: async (request, reply) => {
             const { pseudo } = request.params
-            return {user: await userService.getUser(pseudo)}
+            try {
+                const user = await userService.getUser(pseudo);
+                if (user) {
+                  return reply.status(200).send(user);
+                }
+                return reply.status(404).send();
+              } catch (error) {
+                return error;
+              }
         }
     })
 
