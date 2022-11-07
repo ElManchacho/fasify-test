@@ -8,7 +8,7 @@ Is being used with following Angular training front : https://github.com/ElManch
 
 ## To come
 
-For now, nothing.
+Handle private routes with authorization token.
 
 ## Done
 
