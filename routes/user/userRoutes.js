@@ -43,7 +43,6 @@ module.exports = function (server, opts, done) {
       try {
         const users = await userService.getUsersPseudo();
         if (users) {
-          console.log(users)
           return reply.status(200).send(users);
         }
         return reply.status(404).send();
