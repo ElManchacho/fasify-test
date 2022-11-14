@@ -12,9 +12,23 @@ class UserService{
 
     getUsers() {
 
-        userList = this.userConnection // With a normal database, you query it right here. Would be a 'SELECT * FROM User' in sql
+        const userList = this.userConnection // With a normal database, you query it right here. Would be a 'SELECT * FROM User' in sql
         
         return userList
+
+    }
+
+    getUsersPseudo() {
+
+        const userList = this.userConnection
+        
+        const pseudoList = []
+
+        userList.forEach(user=>{
+            pseudoList.push(user.pseudo)
+        })
+        
+        return pseudoList
 
     }
 

@@ -23,6 +23,24 @@ const getUserSchema = {
     }
 }
 
+const getUsersPseudo = {
+    description: 'Get all user\'s pseudos',
+    tags: ['User'],
+    response: {
+        200: {
+            type: 'array',
+            items: {
+                type: 'string',
+            }
+        },
+        404: {
+            description: 'No existing users',
+            type: 'null',
+        }
+    }
+}
+
 module.exports = {
-    getUserSchema
+    getUserSchema,
+    getUsersPseudo
 }
