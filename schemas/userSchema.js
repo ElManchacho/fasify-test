@@ -1,4 +1,4 @@
-const getUserSchema = {
+const getUserByPseudoSchema = {
     description: 'Get specific user by pseudo',
     tags: ['User'],
     params: {
@@ -12,7 +12,7 @@ const getUserSchema = {
                 name: { type: 'string' },
                 pseudo: { type: 'string' },
                 age: { type: 'integer' },
-                birthdate: { type: 'string' },
+                birthDate: { type: 'string' },
                 password: { type: 'string' }
             }
         },
@@ -54,7 +54,7 @@ const getUserByIdSchema = {
                 name: { type: 'string' },
                 pseudo: { type: 'string' },
                 age: { type: 'integer' },
-                birthdate: { type: 'string' },
+                birthDate: { type: 'string' },
                 password: { type: 'string' }
             }
         },
@@ -65,8 +65,44 @@ const getUserByIdSchema = {
     }
 }
 
+const createUserSchema = {
+    description: 'Create a new user',
+    tags: ['User'],
+    body: {
+        type: ['object', 'string'], // Had to accept both string and object types, because swagger passes an Object to the request, and the swagger passes a String --> generate a message at API start "strict mode: use allowUnionTypes to allow union type keyword at "#" (strictTypes)", don't know how to solve that
+        properties: {
+            name: { type: 'string' },
+            pseudo: { type: 'string' },
+            age: { type: 'number' },
+            birthdate: { type: 'string' },
+            password: { type: 'string' }
+        },
+    },
+    response: {
+        200: {
+            type: 'object',
+            properties: {
+                name: { type: 'string' },
+                pseudo: { type: 'string' },
+                age: { type: 'number' },
+                birthDate: { type: 'string' },
+                password: { type: 'string' }
+            }
+        },
+        400: {
+            description: 'New User bad request response',
+            type: 'null',
+        },
+        404: {
+            description: 'New User not found response',
+            type: 'null',
+        }
+    }
+}
+
 module.exports = {
-    getUserSchema,
     getUsersPseudoSchema,
-    getUserByIdSchema
+    getUserByPseudoSchema,
+    getUserByIdSchema,
+    createUserSchema
 }

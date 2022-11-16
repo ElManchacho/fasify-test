@@ -32,7 +32,7 @@ class UserService{
 
     }
 
-    getUser(pseudo=''){
+    getUserByPseudo(pseudo){
         var users = this.userConnection
         // simulate query by pseudo
         var userFound
@@ -45,7 +45,7 @@ class UserService{
         return userFound
     }
 
-    getUserById(id=''){
+    getUserById(id){
         var users = this.userConnection
         // simulate query by id
         var userFound
@@ -56,6 +56,40 @@ class UserService{
         })
         
         return userFound
+    }
+
+    createUser(body){
+        if (typeof body == 'string'){ //  Had to accept both string and object types, because swagger passes an Object to the request, and the swagger passes a String, then the string must be converted into Json object
+            body = JSON.parse(body)
+        }
+
+        // Create a new User object
+
+        const User = require('../../ObjectClasses/userClass')
+
+        var newUser = new User(body.name, body.pseudo, body.age, body.birthdate, body.password)
+
+        // Add new User object to JSON database
+
+        const fs = require('fs');
+
+        var fileName = 'jsonDb\\usersJsonDb.json' // --> Path to reach the JSON database file from the server location
+
+        var file = this.userConnection
+
+        var content = file
+
+        file.push(newUser)
+
+        content = JSON.stringify(content)
+
+        fs.writeFile(fileName, content, function writeJSON(err) {
+            if (err) {
+                return err
+            };
+        });
+
+        return newUser
     }
     
 }
