@@ -1,5 +1,5 @@
 const getUserSchema = {
-    description: 'Get specific user',
+    description: 'Get specific user by pseudo',
     tags: ['User'],
     params: {
         pseudo: { type: 'string' }
@@ -23,7 +23,7 @@ const getUserSchema = {
     }
 }
 
-const getUsersPseudo = {
+const getUsersPseudoSchema = {
     description: 'Get all user\'s pseudos',
     tags: ['User'],
     response: {
@@ -40,7 +40,33 @@ const getUsersPseudo = {
     }
 }
 
+const getUserByIdSchema = {
+    description: 'Get specific user by id',
+    tags: ['User'],
+    params: {
+        id: { type: 'string' }
+    },
+    response: {
+        200: {
+            type: 'object',
+            properties: {
+                id: { type: 'string' },
+                name: { type: 'string' },
+                pseudo: { type: 'string' },
+                age: { type: 'integer' },
+                birthdate: { type: 'string' },
+                password: { type: 'string' }
+            }
+        },
+        404: {
+            description: 'Get User not found response',
+            type: 'null',
+        }
+    }
+}
+
 module.exports = {
     getUserSchema,
-    getUsersPseudo
+    getUsersPseudoSchema,
+    getUserByIdSchema
 }

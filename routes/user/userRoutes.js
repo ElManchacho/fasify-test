@@ -16,7 +16,7 @@ module.exports = function (server, opts, done) {
   const { getUserSchema } = require('../../schemas/userSchema')
   server.route({
     method: 'GET',
-    url: '/user/:pseudo',
+    url: '/userPseudo/:pseudo',
     schema: getUserSchema,
     handler: async (request, reply) => {
       const { pseudo } = request.params
@@ -34,16 +34,37 @@ module.exports = function (server, opts, done) {
 
   // Define a route to get all user's pseudo
 
-  const { getUsersPseudo } = require('../../schemas/userSchema')
+  const { getUsersPseudoSchema } = require('../../schemas/userSchema')
   server.route({
     method: 'GET',
-    url: '/user',
-    schema: getUsersPseudo,
+    url: '/userPseudos',
+    schema: getUsersPseudoSchema,
     handler: async (request, reply) => {
       try {
         const users = await userService.getUsersPseudo();
         if (users) {
           return reply.status(200).send(users);
+        }
+        return reply.status(404).send();
+      } catch (error) {
+        return error;
+      }
+    }
+  })
+
+  // Define a route to get a user by it's ID
+
+  const { getUserByIdSchema } = require('../../schemas/userSchema')
+  server.route({
+    method: 'GET',
+    url: '/user/:id',
+    schema: getUserByIdSchema,
+    handler: async (request, reply) => {
+      const { id } = request.params
+      try {
+        const user = await userService.getUserById(id);
+        if (user) {
+          return reply.status(200).send(user);
         }
         return reply.status(404).send();
       } catch (error) {
