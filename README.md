@@ -30,9 +30,9 @@ A route that'd take headers and body values in account
 
 A basic test swagger (add @fastify/swagger + @fastify/swagger-ui to your fastify server)
 
-*New* - Completed the swagger with reply options and added messages
+Completed the swagger with reply options and added messages
 
-*New* - Modified the handlers request logic with try catch to secure http responses if error are encountered
+Modified the handlers request logic with try catch to secure http responses if error are encountered
 
 # Start things
 
