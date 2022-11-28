@@ -19,9 +19,8 @@ module.exports = function (server, opts, done) {
     url: '/userPseudo/:pseudo',
     schema: getUserByPseudoSchema,
     handler: async (request, reply) => {
-      const { pseudo } = request.params
       try {
-        const user = await userService.getUserByPseudo(pseudo);
+        const user = await userService.getUserByPseudo(request.params);
         if (user) {
           return reply.status(200).send(user);
         }
