@@ -18,8 +18,7 @@
 								"key": "idcreator",
 								"value": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
 								"description": "not case sensitive in fastify request analysis",
-								"type": "text",
-								"disabled": true
+								"type": "text"
 							}
 						],
 						"body": {
@@ -54,7 +53,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/post/03cfaeaf-1394-4082-be6a-3f9175ca5e3f",
+							"raw": "http://localhost:3000/post/ba24d60b-a420-49cf-89b3-00195605dd1b",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -62,7 +61,7 @@
 							"port": "3000",
 							"path": [
 								"post",
-								"03cfaeaf-1394-4082-be6a-3f9175ca5e3f"
+								"ba24d60b-a420-49cf-89b3-00195605dd1b"
 							]
 						}
 					},
@@ -74,7 +73,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/post/1c1f8c9a-156a-4cf4-a50d-ae0ebe361e35",
+							"raw": "http://localhost:3000/post/c2689ef8-f7d3-427a-96bd-19c4d1b723a4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -82,7 +81,7 @@
 							"port": "3000",
 							"path": [
 								"post",
-								"1c1f8c9a-156a-4cf4-a50d-ae0ebe361e35"
+								"c2689ef8-f7d3-427a-96bd-19c4d1b723a4"
 							]
 						}
 					},
@@ -94,14 +93,14 @@
 						"method": "PATCH",
 						"header": [
 							{
-								"key": "userid",
+								"key": "idcreator",
 								"value": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\":\"Title replaced\",\r\n    \"text\":\"Text replaced\"\r\n}"
+							"raw": "{\r\n    \"title\":\"Title replaced2\",\r\n    \"text\":\"Text replaced2\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/post/c2689ef8-f7d3-427a-96bd-19c4d1b723a4",
@@ -149,7 +148,76 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/user/mary123",
+							"raw": "http://localhost:3000/userPseudo/mary123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userPseudo",
+								"mary123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "idcreator",
+								"value": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+								"description": "not case sensitive in fastify request analysis",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Paul\",\r\n    \"pseudo\":\"test\",\r\n    \"age\":\"22\",\r\n    \"email\":\"test@test.com\",\r\n    \"birthDate\":\"03/09/2000\",\r\n    \"password\":\"test123456\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all pseudos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/userPseudos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"userPseudos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/d8182af0-99b3-42d3-8adf-7715e8a9c57a",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -157,7 +225,7 @@
 							"port": "3000",
 							"path": [
 								"user",
-								"mary123"
+								"d8182af0-99b3-42d3-8adf-7715e8a9c57a"
 							]
 						}
 					},
