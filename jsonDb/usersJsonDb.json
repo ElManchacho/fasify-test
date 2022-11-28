@@ -3,6 +3,7 @@
         "id": "35693f8a-ca2e-4bd1-8629-34780c11ad99",
         "name": "Henry",
         "pseudo": "henry123",
+        "email": "henry123@gmail.com",
         "age": 25,
         "birthDate": "01/08/1997",
         "password": "123456"
@@ -11,6 +12,7 @@
         "id": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
         "name": "Mary",
         "pseudo": "mary123",
+        "email": "mary123@gmail.com",
         "age": 50,
         "birthDate": "01/08/1972",
         "password": "m@ry1972"
@@ -19,15 +21,8 @@
         "id": "8032ac61-05ff-4ef0-a82f-da98fa10fc99",
         "name": "Paul",
         "pseudo": "ElManchacho",
-        "age": 0,
-        "birthDate": "03/09/2000",
-        "password": "pld123456"
-    },
-    {
-        "id": "9c211a48-c366-42f6-9133-57a5bc6fd869",
-        "name": "Paul",
-        "pseudo": "fezfzeezffzezefzef",
-        "age": 0,
+        "email": "plducar2@gmail.com",
+        "age": 22,
         "birthDate": "03/09/2000",
         "password": "pld123456"
     }

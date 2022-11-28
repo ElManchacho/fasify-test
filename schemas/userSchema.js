@@ -11,6 +11,7 @@ const getUserByPseudoSchema = {
                 id: { type: 'string' },
                 name: { type: 'string' },
                 pseudo: { type: 'string' },
+                email: { type: 'string' },
                 age: { type: 'integer' },
                 birthDate: { type: 'string' },
                 password: { type: 'string' }
@@ -53,6 +54,7 @@ const getUserByIdSchema = {
                 id: { type: 'string' },
                 name: { type: 'string' },
                 pseudo: { type: 'string' },
+                email: { type: 'string' },
                 age: { type: 'integer' },
                 birthDate: { type: 'string' },
                 password: { type: 'string' }
@@ -73,6 +75,7 @@ const createUserSchema = {
         properties: {
             name: { type: 'string' },
             pseudo: { type: 'string' },
+            email: { type: 'string' },
             age: { type: 'number' },
             birthdate: { type: 'string' },
             password: { type: 'string' }
@@ -84,6 +87,7 @@ const createUserSchema = {
             properties: {
                 name: { type: 'string' },
                 pseudo: { type: 'string' },
+                email: { type: 'string' },
                 age: { type: 'number' },
                 birthDate: { type: 'string' },
                 password: { type: 'string' }

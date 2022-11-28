@@ -32,12 +32,31 @@ class UserService{
 
     }
 
-    getUserByPseudo(pseudo){
+    getUserByPseudo(body){
+        if (typeof body == 'string'){ //  Had to accept both string and object types, because swagger passes an Object to the request, and the swagger passes a String, then the string must be converted into Json object
+            body = JSON.parse(body)
+        }
         var users = this.userConnection
         // simulate query by pseudo
         var userFound
         users.forEach(user=>{
-            if (user['pseudo']==pseudo){
+            if (user['pseudo']==body.pseudo){
+                userFound = user
+            }
+        })
+
+        return userFound
+    }
+
+    getUserByEmail(body){
+        if (typeof body == 'string'){ //  Had to accept both string and object types, because swagger passes an Object to the request, and the swagger passes a String, then the string must be converted into Json object
+            body = JSON.parse(body)
+        }
+        var users = this.userConnection
+        // simulate query by email
+        var userFound
+        users.forEach(user=>{
+            if (user['email']==body.email){
                 userFound = user
             }
         })
@@ -67,7 +86,7 @@ class UserService{
 
         const User = require('../../ObjectClasses/userClass')
 
-        var newUser = new User(body.name, body.pseudo, body.age, body.birthdate, body.password)
+        var newUser = new User(body.name, body.pseudo, body.email, body.age, body.birthDate, body.password)
 
         // Add new User object to JSON database
 

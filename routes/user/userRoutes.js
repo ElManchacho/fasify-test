@@ -78,15 +78,19 @@ module.exports = function (server, opts, done) {
   const { createUserSchema } = require('../../schemas/userSchema')
   server.route({
     method: 'POST',
-    url: '/user/new',
+    url: '/user',
     schema: createUserSchema,
     handler: async (request, reply) => {
       const { body } = request
             try {
-                const creator = await userService.getUserByPseudo(body.pseudo);
-                if (creator) {
-                    return reply.status(404).type('text/plain').send(`User with pseudo '${body.pseudo}' already exists.`);
+                const creatorPseudo = await userService.getUserByPseudo(body); // can't create user with pseudo already existing
+                if (creatorPseudo) {
+                    return reply.status(404).type('text/plain').send(`User with pseudo '${creatorPseudo.pseudo}' already exists.`);
                 }
+                const creatorEmail = await userService.getUserByEmail(body); // can't create user with email already existing
+                if (creatorEmail) {
+                  return reply.status(404).type('text/plain').send(`User with email '${creatorEmail.email}' already exists.`);
+              }
                 else {
                     try {
                         const newUser = await userService.createUser(body);
