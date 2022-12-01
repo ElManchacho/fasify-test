@@ -51,19 +51,40 @@ module.exports = function (server, opts, done) {
     }
   })
 
+  // Define a route to see if an pseudo exists
+
+  const { pseudoExistsSchema } = require('../../schemas/userSchema')
+  server.route({
+    method: 'GET',
+    url: '/usersPseudo/:pseudo',
+    schema: pseudoExistsSchema,
+    handler: async (request, reply) => {
+      try {
+        const { pseudo } = request.params
+        const pseudoExists = await userService.pseudoExists(pseudo);
+        try{
+          return reply.status(200).send(pseudoExists);
+        }
+        catch{
+          return reply.status(404).send();
+        }
+      } catch (error) {
+        return error;
+      }
+    }
+  })
+
   // Define a route to see if an email exists
 
-  const { getUsersEmailSchema } = require('../../schemas/userSchema')
+  const { emailExistsSchema } = require('../../schemas/userSchema')
   server.route({
     method: 'GET',
     url: '/usersEmails/:email',
-    schema: getUsersEmailSchema,
+    schema: emailExistsSchema,
     handler: async (request, reply) => {
       try {
         const { email } = request.params
-        console.log(email)
-        const emailExists = await userService.getUsersEmails(email);
-        console.log(emailExists)
+        const emailExists = await userService.emailExists(email);
         try{
           return reply.status(200).send(emailExists);
         }

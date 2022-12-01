@@ -31,15 +31,29 @@ class UserService{
         return pseudoList
 
     }
-    
-    getUsersEmails(email) {
+
+    pseudoExists(pseudo) {
 
         var exists = false
 
         const userList = this.userConnection
 
         userList.forEach(user=>{
-            console.log(user.email+'/'+email)
+            if(String(user.pseudo)==String(pseudo)){
+                exists = true
+            }
+        })
+        
+        return exists
+    }
+    
+    emailExists(email) {
+
+        var exists = false
+
+        const userList = this.userConnection
+
+        userList.forEach(user=>{
             if(String(user.email)==String(email)){
                 exists = true
             }

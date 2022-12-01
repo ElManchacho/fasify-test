@@ -41,7 +41,24 @@ const getUsersPseudoSchema = {
     }
 }
 
-const getUsersEmailSchema = {
+const pseudoExistsSchema = {
+    description: 'See if pseudo exists',
+    tags: ['User'],
+    params: {
+        pseudo: { type: 'string' }
+    },
+    response: {
+        200: {
+            type: 'boolean',
+        },
+        404: {
+            description: 'No existing users',
+            type: 'null',
+        }
+    }
+}
+
+const emailExistsSchema = {
     description: 'See if email exists',
     tags: ['User'],
     params: {
@@ -123,7 +140,8 @@ const createUserSchema = {
 
 module.exports = {
     getUsersPseudoSchema,
-    getUsersEmailSchema,
+    pseudoExistsSchema,
+    emailExistsSchema,
     getUserByPseudoSchema,
     getUserByIdSchema,
     createUserSchema
