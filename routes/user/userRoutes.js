@@ -128,7 +128,6 @@ module.exports = function (server, opts, done) {
     handler: async (request, reply) => {
       const { body } = request
             try {
-              console.log(body)
                 const creatorPseudo = await userService.pseudoExists('', body); // can't create user with pseudo already existing
                 if (creatorPseudo) {
                   if(body.pseudo){
