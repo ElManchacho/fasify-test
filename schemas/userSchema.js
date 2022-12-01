@@ -41,6 +41,23 @@ const getUsersPseudoSchema = {
     }
 }
 
+const getUsersEmailSchema = {
+    description: 'Get all user\'s emails',
+    tags: ['User'],
+    response: {
+        200: {
+            type: 'array',
+            items: {
+                type: 'string',
+            }
+        },
+        404: {
+            description: 'No existing users',
+            type: 'null',
+        }
+    }
+}
+
 const getUserByIdSchema = {
     description: 'Get specific user by id',
     tags: ['User'],
@@ -106,6 +123,7 @@ const createUserSchema = {
 
 module.exports = {
     getUsersPseudoSchema,
+    getUsersEmailSchema,
     getUserByPseudoSchema,
     getUserByIdSchema,
     createUserSchema

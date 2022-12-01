@@ -40,9 +40,29 @@ module.exports = function (server, opts, done) {
     schema: getUsersPseudoSchema,
     handler: async (request, reply) => {
       try {
-        const users = await userService.getUsersPseudo();
-        if (users) {
-          return reply.status(200).send(users);
+        const pseudos = await userService.getUsersPseudo();
+        if (pseudos) {
+          return reply.status(200).send(pseudos);
+        }
+        return reply.status(404).send();
+      } catch (error) {
+        return error;
+      }
+    }
+  })
+
+  // Define a route to get all user's mails
+
+  const { getUsersEmailSchema } = require('../../schemas/userSchema')
+  server.route({
+    method: 'GET',
+    url: '/userEmails',
+    schema: getUsersEmailSchema,
+    handler: async (request, reply) => {
+      try {
+        const emails = await userService.getUsersEmails();
+        if (emails) {
+          return reply.status(200).send(emails);
         }
         return reply.status(404).send();
       } catch (error) {

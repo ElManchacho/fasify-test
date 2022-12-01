@@ -31,6 +31,18 @@ class UserService{
         return pseudoList
 
     }
+    
+    getUsersEmails() {
+        const userList = this.userConnection
+        
+        const emailList = []
+
+        userList.forEach(user=>{
+            emailList.push(user.email)
+        })
+        
+        return emailList
+    }
 
     getUserByPseudo(body){
         if (typeof body == 'string'){ //  Had to accept both string and object types, because swagger passes an Object to the request, and the swagger passes a String, then the string must be converted into Json object
