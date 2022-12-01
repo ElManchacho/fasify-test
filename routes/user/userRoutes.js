@@ -128,13 +128,25 @@ module.exports = function (server, opts, done) {
     handler: async (request, reply) => {
       const { body } = request
             try {
-                const creatorPseudo = await userService.getUserByPseudo(body); // can't create user with pseudo already existing
+              console.log(body)
+                const creatorPseudo = await userService.pseudoExists('', body); // can't create user with pseudo already existing
                 if (creatorPseudo) {
-                    return reply.status(404).type('text/plain').send(`User with pseudo '${creatorPseudo.pseudo}' already exists.`);
+                  if(body.pseudo){
+                    return reply.status(400).type('text/plain').send(`User with pseudo '${body.pseudo}' already exists.`);
+                  }
+                  else
+                  {
+                    return reply.status(400).type('text/plain').send(`User with pseudo '${JSON.parse(body).pseudo}' already exists.`);
+                  }
                 }
-                const creatorEmail = await userService.getUserByEmail(body); // can't create user with email already existing
+                const creatorEmail = await userService.emailExists('', body); // can't create user with email already existing
                 if (creatorEmail) {
-                  return reply.status(404).type('text/plain').send(`User with email '${creatorEmail.email}' already exists.`);
+                  if(body.email){
+                    return reply.status(400).type('text/plain').send(`User with email '${body.email}' already exists.`);
+                  }
+                  else{
+                    return reply.status(400).type('text/plain').send(`User with email '${JSON.parse(body).email}' already exists.`);
+                  }                  
               }
                 else {
                     try {
@@ -143,7 +155,7 @@ module.exports = function (server, opts, done) {
                             return reply.status(200).send(newUser)
                         }
                         else {
-                            return reply.status(400).type('text/plain').send('Bad request');
+                            return reply.status(404).type('text/plain').send();
                         }
                     } catch (error) {
                         return error;

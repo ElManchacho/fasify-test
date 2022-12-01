@@ -32,7 +32,11 @@ class UserService{
 
     }
 
-    pseudoExists(pseudo) {
+    pseudoExists(pseudo='', body='{}') {
+        if (typeof body == 'string'){ //  Had to accept both string and object types, because swagger passes an Object to the request, and the swagger passes a String, then the string must be converted into Json object
+            body = JSON.parse(body)
+            pseudo = body.pseudo
+        }
 
         var exists = false
 
@@ -47,7 +51,11 @@ class UserService{
         return exists
     }
     
-    emailExists(email) {
+    emailExists(email='', body='{}') {
+        if (typeof body == 'string'){ //  Had to accept both string and object types, because swagger passes an Object to the request, and the swagger passes a String, then the string must be converted into Json object
+            body = JSON.parse(body)
+            email = body.email
+        }
 
         var exists = false
 
