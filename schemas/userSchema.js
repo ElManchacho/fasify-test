@@ -42,14 +42,14 @@ const getUsersPseudoSchema = {
 }
 
 const getUsersEmailSchema = {
-    description: 'Get all user\'s emails',
+    description: 'See if email exists',
     tags: ['User'],
+    params: {
+        email: { type: 'string' }
+    },
     response: {
         200: {
-            type: 'array',
-            items: {
-                type: 'string',
-            }
+            type: 'boolean',
         },
         404: {
             description: 'No existing users',

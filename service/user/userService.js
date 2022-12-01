@@ -32,16 +32,20 @@ class UserService{
 
     }
     
-    getUsersEmails() {
+    getUsersEmails(email) {
+
+        var exists = false
+
         const userList = this.userConnection
-        
-        const emailList = []
 
         userList.forEach(user=>{
-            emailList.push(user.email)
+            console.log(user.email+'/'+email)
+            if(String(user.email)==String(email)){
+                exists = true
+            }
         })
         
-        return emailList
+        return exists
     }
 
     getUserByPseudo(body){

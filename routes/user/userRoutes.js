@@ -51,20 +51,25 @@ module.exports = function (server, opts, done) {
     }
   })
 
-  // Define a route to get all user's mails
+  // Define a route to see if an email exists
 
   const { getUsersEmailSchema } = require('../../schemas/userSchema')
   server.route({
     method: 'GET',
-    url: '/userEmails',
+    url: '/usersEmails/:email',
     schema: getUsersEmailSchema,
     handler: async (request, reply) => {
       try {
-        const emails = await userService.getUsersEmails();
-        if (emails) {
-          return reply.status(200).send(emails);
+        const { email } = request.params
+        console.log(email)
+        const emailExists = await userService.getUsersEmails(email);
+        console.log(emailExists)
+        try{
+          return reply.status(200).send(emailExists);
         }
-        return reply.status(404).send();
+        catch{
+          return reply.status(404).send();
+        }
       } catch (error) {
         return error;
       }
