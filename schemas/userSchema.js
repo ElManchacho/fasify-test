@@ -148,9 +148,11 @@ const loginUserSchema = {
     response: {
         200: {
             type: 'boolean',
+            description: 'Should return true if login informations match',
         },
         401: {
             type: 'boolean',
+            description: 'Should return false if login informations doesn\'t match',
         }
     }
 }

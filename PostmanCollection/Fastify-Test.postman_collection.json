@@ -176,7 +176,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Paul\",\r\n    \"pseudo\":\"test\",\r\n    \"age\":\"22\",\r\n    \"email\":\"test@test.com\",\r\n    \"birthDate\":\"03/09/2000\",\r\n    \"password\":\"test123456\"\r\n}"
+							"raw": "{\r\n    \"name\":\"Paul\",\r\n    \"pseudo\":\"test2\",\r\n    \"age\":\"22\",\r\n    \"email\":\"mary123@gmail.com\",\r\n    \"birthDate\":\"03/09/2000\",\r\n    \"password\":\"test123456\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/user",
@@ -226,6 +226,37 @@
 							"path": [
 								"user",
 								"d8182af0-99b3-42d3-8adf-7715e8a9c57a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "login",
+								"value": "plducar2@gmail.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "pld123456",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
 							]
 						}
 					},
