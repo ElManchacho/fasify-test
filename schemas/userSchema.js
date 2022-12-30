@@ -138,11 +138,29 @@ const createUserSchema = {
     }
 }
 
+const loginUserSchema = {
+    description: 'Login',
+    tags: ['User'],
+    headers: {
+        login: { type: 'string' },
+        password: { type: 'string' }
+    },
+    response: {
+        200: {
+            type: 'boolean',
+        },
+        401: {
+            type: 'boolean',
+        }
+    }
+}
+
 module.exports = {
     getUsersPseudoSchema,
     pseudoExistsSchema,
     emailExistsSchema,
     getUserByPseudoSchema,
     getUserByIdSchema,
-    createUserSchema
+    createUserSchema,
+    loginUserSchema
 }

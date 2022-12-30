@@ -166,6 +166,27 @@ module.exports = function (server, opts, done) {
     }
   })
 
+  // User login route with response schema
+
+  const { loginUserSchema } = require('../../schemas/userSchema')
+  server.route({
+      method: 'POST',
+      url: '/user/login',
+      schema: loginUserSchema,
+      handler: async (request, reply) => {
+          const { login, password } = request.headers // --> Not case sensistive
+          try {
+              const logState = await userService.login(login, password)
+              if (logState) {
+                return reply.status(200).send(logState);
+              }
+              return reply.status(401).send(logState);
+          } catch (error) {
+              return error;
+          }
+      }
+  })
+
   // End fastify instanciation
 
   done()
