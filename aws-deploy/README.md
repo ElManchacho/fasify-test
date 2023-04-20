@@ -106,12 +106,45 @@ Run : aws ecr get-login --no-include-email
   Run : aws ecr list-images --repository-name docker-fastify-aws/nodejs
   to see it
   
+  Go in the "aws-deploy" folder and run :  
   aws iam create-role --role-name ecsTaskExecutionRole --assume-role-policy-document file://task-execution-assume-role.json
+  
+  Save the "Arn" output attribute
   
   If error, check user's autorisations & policies in IAM : its credentials may have leaked in your code (be careful next time) and block every aciton from this user.
   Remove it or restart full User creation process.
   
+  aws iam attach-role-policy --role-name ecsTaskExecutionRole --policy-arn arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy
   
+  Edit node-task-definition.json file and fill "executionRoleArn": "<ROLE-ARN-YOU-SAVED-EARLIER>" &  "image": "<YOUR-ECR-IMAGE-URI>"
+  "image" value can be found on the ECR list on AWS here : https://eu-west-3.console.aws.amazon.com/ecr/repositories?region=eu-west-3 (url will change depending your region).
+
+{
+    "family": "nodejs-fargate-task",
+    "networkMode": "awsvpc",
+    "executionRoleArn": "<ROLE-ARN-YOU-SAVED-EARLIER>",
+    "containerDefinitions": [
+        {
+            "name": "nodejs-app",
+            "image": "<YOUR-ECR-IMAGE-URI>",
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512"
+}
+  
+  aws ecs register-task-definition --cli-input-json file://node-task-definition.json 
   
   
   
