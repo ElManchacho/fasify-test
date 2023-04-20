@@ -78,7 +78,12 @@ Create an empty ECS cluster :
   
   aws ecs create-cluster --cluster-name docker-fastify-aws
   
-We will now create a new ECR, by running : aws ecr get-login --no-include-email
+We will now create a new ECR, but first set : Cloud9 Preferences > AWS Sesstings > Credentials > AWS managed temporary credentials > False
+  
+  ![image](https://user-images.githubusercontent.com/74706889/233388447-babc3348-f329-45af-a7b3-e8567702c4af.png)
+
+  
+Run : aws ecr get-login --no-include-email
   
   Output :
   
@@ -87,6 +92,24 @@ We will now create a new ECR, by running : aws ecr get-login --no-include-email
 
   As it is shown in the seconde section of the prompt command above, launch the docker login command.
   
+  
+  aws ecr create-repository --repository-name docker-fastify-aws/nodejs
+  
+  docker tag docker-fastify-aws 841581342668.dkr.ecr.eu-west-3.amazonaws.com/docker-fastify-aws/nodejs
+  
+  Run : docker images
+  to see your newly created docker image
+  
+  Push your image on ECR : docker push 841581342668.dkr.ecr.eu-west-3.amazonaws.com/docker-fastify-aws/nodejs
+  
+  
+  Run : aws ecr list-images --repository-name docker-fastify-aws/nodejs
+  to see it
+  
+  aws iam create-role --role-name ecsTaskExecutionRole --assume-role-policy-document file://task-execution-assume-role.json
+  
+  If error, check user's autorisations & policies in IAM : its credentials may have leaked in your code (be careful next time) and block every aciton from this user.
+  Remove it or restart full User creation process.
   
   
   
