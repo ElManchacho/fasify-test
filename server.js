@@ -76,7 +76,7 @@ fastify.register(require('@fastify/swagger-ui'), {
 
 // Allow CORS rules
 
-cors = require('@fastify/cors');
+const cors = require('@fastify/cors');
 
 fastify.register(cors, {
     origin: '*',
