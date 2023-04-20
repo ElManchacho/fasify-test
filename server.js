@@ -102,6 +102,7 @@ fastify.ready(err => {
 // Run the server!
 const start = async () => {
     try {
+      console.log("Starting fastify listener ...")
         await fastify.listen({ port: 3000 })
     } catch (err) {
         fastify.log.error(err)
