@@ -65,6 +65,28 @@ Go into the user list and select your newly create user, then go check it's acce
   After creation, don't forget to store the key values.
   
   
+Run : aws configure
+  
+Output :
+AWS Access Key ID [None]: AKIA4H4RIF7GE2GGJ2XB
+AWS Secret Access Key [None]: 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
+Default region name [None]: eu-west-3
+Default output format [None]: 
+  
+  
+Create an empty ECS cluster :
+  
+  aws ecs create-cluster --cluster-name docker-fastify-aws
+  
+We will now create a new ECR, by running : aws ecr get-login --no-include-email
+  
+  Output :
+  
+  
+  ![image](https://user-images.githubusercontent.com/74706889/233387617-c9916e3a-7ad7-4626-aa40-1f6d2c5bda99.png)
+
+  As it is shown in the seconde section of the prompt command above, launch the docker login command.
+  
   
   
   
