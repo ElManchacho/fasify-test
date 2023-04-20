@@ -54,7 +54,15 @@ Policy name : fastify-test-policy
   ![image](https://user-images.githubusercontent.com/74706889/233380484-6a51c218-3a58-4482-96f9-0f5916bfcef9.png)
 
   
+Go into the user list and select your newly create user, then go check it's access keys :
+  
+  ![image](https://user-images.githubusercontent.com/74706889/233380955-cc797055-a371-4f02-89d1-b1a5561717f3.png)
 
+  Create one :
+  
+  ![image](https://user-images.githubusercontent.com/74706889/233381106-2f0f2276-1ff1-4d3d-b94b-8f544dd2135a.png)
+
+  After creation, don't forget to store the key values.
   
   
   
