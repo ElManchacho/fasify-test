@@ -146,7 +146,13 @@ Run : aws ecr get-login --no-include-email
   
   aws ecs register-task-definition --cli-input-json file://node-task-definition.json 
   
+  aws ec2 describe-security-groups --group-id <YOUR SG ID>
   
+  aws ec2 authorize-security-group-ingress --group-id <YOUR SG ID> --protocol tcp --port 3000 --cidr 0.0.0.0/0
+  
+  aws ec2 describe-subnets
+  
+  aws ecs create-service --cluster docker-fastify-aws --service-name nodejs-service --task-definition nodejs-fargate-task-fastify:1 --desired-count 1 --network-configuration "awsvpcConfiguration={subnets=[ subnet-04a070b1eaf421499, subnet-04190824724deb81c, subnet-00570c8f8f608b685],securityGroups=[<SG-ID>],assignPublicIp=ENABLED}" --launch-type "FARGATE"
   
   
   
