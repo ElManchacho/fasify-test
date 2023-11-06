@@ -1,1 +1,114 @@
-[{"id":"c2689ef8-f7d3-427a-96bd-19c4d1b723a4","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"17/10/2022","title":"Title replaced2","text":"Text replaced2"},{"id":"adab97b7-6ea2-45e1-b3de-92ce2a818ada","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"10/18/2022","title":"Post creation test","text":"This post is a test to check if it is properly created and added to database"},{"id":"8330a534-968c-4fbb-83ff-870d1c6b4d69","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"10/20/2022","title":"string","text":"string"},{"id":"0867cec9-41a9-4357-8b6d-7b496bacbcdb","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"10/20/2022","title":"string","text":"string"},{"id":"854f72ae-3a4a-4768-a17a-a38093a6b31d","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"10/20/2022","title":"string","text":"string"},{"id":"cb777207-5c4c-4594-9063-aafaab1be40e","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"11/7/2022","title":"Post creation test","text":"This post is a test to check if it is properly created and added to database"},{"id":"20a31562-5681-46e5-84a8-6a39da80e50d","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"11/7/2022","title":"Post creation test","text":"This post is a test to check if it is properly created and added to database"},{"id":"57b9fe04-2520-405d-8a82-b23186e76c0a","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"11/7/2022","title":"Post creation test","text":"This post is a test to check if it is properly created and added to database"},{"id":"01207860-da46-4f44-841b-b6de3b59bf17","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"11/7/2022","title":"testswagger","text":"testswagger"},{"id":"e712aaae-ed1b-486d-9da3-d249bc9d92d0","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"11/7/2022","title":"testswagger","text":"testswagger"},{"id":"6efbe090-4898-4a67-b83e-9142f1244b70","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"11/7/2022","title":"testswagger","text":"testswagger"},{"id":"f295da52-eb7e-4817-89a6-4ce76e57ea7c","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"11/7/2022","title":"testswagger","text":"testswagger"},{"id":"860326f4-58bf-4092-994c-a4874a3138a0","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"11/7/2022","title":"testswagger","text":"testswagger"},{"id":"00784dc8-f8f7-4ee1-ae34-d4365c225392","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"11/7/2022","title":"testswagger","text":"string"},{"id":"78e598df-c485-4386-b9b4-8eacc71ac28c","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"11/7/2022","title":"Post creation test","text":"This post is a test to check if it is properly created and added to database"},{"id":"b3ecabc2-453d-4ac0-99d5-fe1e0c3e83a9","idCreator":"d8182af0-99b3-42d3-8adf-7715e8a9c57a","creationDate":"11/28/2022","title":"Post creation test","text":"This post is a test to check if it is properly created and added to database"}]
+[
+    {
+        "id": "c2689ef8-f7d3-427a-96bd-19c4d1b723a4",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "17/10/2022",
+        "title": "Title replaced2",
+        "text": "Text replaced2"
+    },
+    {
+        "id": "adab97b7-6ea2-45e1-b3de-92ce2a818ada",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "10/18/2022",
+        "title": "Post creation test",
+        "text": "This post is a test to check if it is properly created and added to database"
+    },
+    {
+        "id": "8330a534-968c-4fbb-83ff-870d1c6b4d69",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "10/20/2022",
+        "title": "string",
+        "text": "string"
+    },
+    {
+        "id": "0867cec9-41a9-4357-8b6d-7b496bacbcdb",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "10/20/2022",
+        "title": "string",
+        "text": "string"
+    },
+    {
+        "id": "854f72ae-3a4a-4768-a17a-a38093a6b31d",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "10/20/2022",
+        "title": "string",
+        "text": "string"
+    },
+    {
+        "id": "cb777207-5c4c-4594-9063-aafaab1be40e",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "11/7/2022",
+        "title": "Post creation test",
+        "text": "This post is a test to check if it is properly created and added to database"
+    },
+    {
+        "id": "20a31562-5681-46e5-84a8-6a39da80e50d",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "11/7/2022",
+        "title": "Post creation test",
+        "text": "This post is a test to check if it is properly created and added to database"
+    },
+    {
+        "id": "57b9fe04-2520-405d-8a82-b23186e76c0a",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "11/7/2022",
+        "title": "Post creation test",
+        "text": "This post is a test to check if it is properly created and added to database"
+    },
+    {
+        "id": "01207860-da46-4f44-841b-b6de3b59bf17",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "11/7/2022",
+        "title": "testswagger",
+        "text": "testswagger"
+    },
+    {
+        "id": "e712aaae-ed1b-486d-9da3-d249bc9d92d0",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "11/7/2022",
+        "title": "testswagger",
+        "text": "testswagger"
+    },
+    {
+        "id": "6efbe090-4898-4a67-b83e-9142f1244b70",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "11/7/2022",
+        "title": "testswagger",
+        "text": "testswagger"
+    },
+    {
+        "id": "f295da52-eb7e-4817-89a6-4ce76e57ea7c",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "11/7/2022",
+        "title": "testswagger",
+        "text": "testswagger"
+    },
+    {
+        "id": "860326f4-58bf-4092-994c-a4874a3138a0",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "11/7/2022",
+        "title": "testswagger",
+        "text": "testswagger"
+    },
+    {
+        "id": "00784dc8-f8f7-4ee1-ae34-d4365c225392",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "11/7/2022",
+        "title": "testswagger",
+        "text": "string"
+    },
+    {
+        "id": "78e598df-c485-4386-b9b4-8eacc71ac28c",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "11/7/2022",
+        "title": "Post creation test",
+        "text": "This post is a test to check if it is properly created and added to database"
+    },
+    {
+        "id": "b3ecabc2-453d-4ac0-99d5-fe1e0c3e83a9",
+        "idCreator": "d8182af0-99b3-42d3-8adf-7715e8a9c57a",
+        "creationDate": "11/28/2022",
+        "title": "Post creation test",
+        "text": "This post is a test to check if it is properly created and added to database"
+    }
+]

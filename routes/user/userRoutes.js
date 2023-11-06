@@ -62,10 +62,10 @@ module.exports = function (server, opts, done) {
       try {
         const { pseudo } = request.params
         const pseudoExists = await userService.pseudoExists(pseudo);
-        try{
+        try {
           return reply.status(200).send(pseudoExists);
         }
-        catch{
+        catch {
           return reply.status(404).send();
         }
       } catch (error) {
@@ -85,10 +85,10 @@ module.exports = function (server, opts, done) {
       try {
         const { email } = request.params
         const emailExists = await userService.emailExists(email);
-        try{
+        try {
           return reply.status(200).send(emailExists);
         }
-        catch{
+        catch {
           return reply.status(404).send();
         }
       } catch (error) {
@@ -127,42 +127,41 @@ module.exports = function (server, opts, done) {
     schema: createUserSchema,
     handler: async (request, reply) => {
       const { body } = request
-            try {
-                const creatorPseudo = await userService.pseudoExists('', body); // can't create user with pseudo already existing
-                if (creatorPseudo) {
-                  if(body.pseudo){
-                    return reply.status(400).type('text/plain').send(`User with pseudo '${body.pseudo}' already exists.`);
-                  }
-                  else
-                  {
-                    return reply.status(400).type('text/plain').send(`User with pseudo '${JSON.parse(body).pseudo}' already exists.`);
-                  }
-                }
-                const creatorEmail = await userService.emailExists('', body); // can't create user with email already existing
-                if (creatorEmail) {
-                  if(body.email){
-                    return reply.status(400).type('text/plain').send(`User with email '${body.email}' already exists.`);
-                  }
-                  else{
-                    return reply.status(400).type('text/plain').send(`User with email '${JSON.parse(body).email}' already exists.`);
-                  }                  
-              }
-                else {
-                    try {
-                        const newUser = await userService.createUser(body);
-                        if (newUser) {
-                            return reply.status(200).send(newUser)
-                        }
-                        else {
-                            return reply.status(404).type('text/plain').send();
-                        }
-                    } catch (error) {
-                        return error;
-                    }
-                }
-            } catch (error) {
-                return error;
+      try {
+        const creatorPseudo = await userService.pseudoExists('', body); // can't create user with pseudo already existing
+        if (creatorPseudo) {
+          if (body.pseudo) {
+            return reply.status(400).type('text/plain').send(`User with pseudo '${body.pseudo}' already exists.`);
+          }
+          else {
+            return reply.status(400).type('text/plain').send(`User with pseudo '${JSON.parse(body).pseudo}' already exists.`);
+          }
+        }
+        const creatorEmail = await userService.emailExists('', body); // can't create user with email already existing
+        if (creatorEmail) {
+          if (body.email) {
+            return reply.status(400).type('text/plain').send(`User with email '${body.email}' already exists.`);
+          }
+          else {
+            return reply.status(400).type('text/plain').send(`User with email '${JSON.parse(body).email}' already exists.`);
+          }
+        }
+        else {
+          try {
+            const newUser = await userService.createUser(body);
+            if (newUser) {
+              return reply.status(200).send(newUser)
             }
+            else {
+              return reply.status(404).type('text/plain').send();
+            }
+          } catch (error) {
+            return error;
+          }
+        }
+      } catch (error) {
+        return error;
+      }
     }
   })
 
@@ -170,21 +169,21 @@ module.exports = function (server, opts, done) {
 
   const { loginUserSchema } = require('../../schemas/userSchema')
   server.route({
-      method: 'POST',
-      url: '/user/login',
-      schema: loginUserSchema,
-      handler: async (request, reply) => {
-          const { login, password } = request.headers // --> Not case sensistive
-          try {
-              const logState = await userService.login(login, password)
-              if (logState) {
-                return reply.status(200).send(logState);
-              }
-              return reply.status(401).send(logState);
-          } catch (error) {
-              return error;
-          }
+    method: 'POST',
+    url: '/user/login',
+    schema: loginUserSchema,
+    handler: async (request, reply) => {
+      const { login, password } = request.headers // --> Not case sensistive
+      try {
+        const logState = await userService.login(login, password)
+        if (logState) {
+          return reply.status(200).send(logState);
+        }
+        return reply.status(401).send(logState);
+      } catch (error) {
+        return error;
       }
+    }
   })
 
   // End fastify instanciation
