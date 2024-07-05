@@ -138,8 +138,8 @@ const createUserSchema = {
     }
 }
 
-const loginUserSchema = {
-    description: 'Login',
+const loginUserSchema = { // I recommand to use a request body to deal with login credentials
+    description: 'Login', // I only use headers for fastify exploration purposes
     tags: ['User'],
     headers: {
         login: { type: 'string' },

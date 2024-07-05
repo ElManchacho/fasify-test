@@ -152,30 +152,15 @@ class UserService{
     login(login, password){
         var logState = false
 
-        // TODO : should call a method de un-hash password (plus a hash method for sign up)
+        // TODO : should call a method to un-hash password (plus a hash method for sign up)
 
         var users = this.userConnection
 
-        if (login.match('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')){
-            
-            // simulate query by email
-
-            users.forEach(user=>{
-                if (user['email']==login && user['password']==password){
-                    logState = true
-                }
-            })
-        }
-        else{
-            
-            // simulate query by pseudo
-
-            users.forEach(user=>{
-                if (user['pseudo']==login && user['password']==password){
-                    logState = true
-                }
-            })
-        }
+        users.forEach(user=>{
+            if (user['pseudo']==login && user['password']==password){
+                logState = true
+            }
+        })
 
         return logState
     }

@@ -181,6 +181,7 @@ module.exports = function (server, opts, done) {
         }
         return reply.status(401).send(logState);
       } catch (error) {
+        console.log(error)
         return error;
       }
     }
